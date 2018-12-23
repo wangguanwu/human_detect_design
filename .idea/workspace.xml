@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6620f9a-bb52-4621-89ea-05520486e0c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cal_ave_bgtemperature.py" beforeDir="false" afterPath="$PROJECT_DIR$/cal_ave_bgtemperature.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cal_ave_bgtemperature.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="25" column="26" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="26" />
+            <state relative-caret-position="350">
+              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -116,8 +115,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/cal_ave_bgtemperature.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="26" />
+        <state relative-caret-position="350">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

@@ -13,7 +13,7 @@ amg = adafruit_amg88xx.AMG88XX(i2c)
 th_bgframes = 300
 # the counter of the bgframes frames
 bgframe_cnt = 0
-all_bgframes: List[List[Any]] = []
+all_bgframes= []
 
 while True:
     temp = []
