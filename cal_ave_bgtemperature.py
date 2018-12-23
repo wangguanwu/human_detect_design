@@ -1,6 +1,4 @@
 import time
-from typing import List, Any
-
 import busio
 import board
 import adafruit_amg88xx
