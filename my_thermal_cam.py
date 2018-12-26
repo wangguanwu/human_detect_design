@@ -99,7 +99,7 @@ while True:
     else:
         threadLock.release()
         continue
-    pixels = [map_value(p, MINTEMP, MAXTEMP, 0, COLORDEPTH - 1) for p in pixels]
+      pixels = [map_value(p, MINTEMP, MAXTEMP, 0, COLORDEPTH - 1) for p in pixels]
 
     #perform interpolation
     bicubic = griddata(points, pixels, (grid_x, grid_y), method='cubic')
