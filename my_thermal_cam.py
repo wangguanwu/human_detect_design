@@ -8,7 +8,8 @@ import _thread
 import busio
 import board
 import threading
-import  Queue
+from queue import Queue
+
 
 import numpy as np
 import pygame
@@ -67,16 +68,13 @@ pygame.display.update()
 threadLock  =threading.Lock()
 #some utility functions
 def readPixels(sensors):
-	while True:
-		threadLock.acquire()
-		if not workQueue.full():
-			pixels = []
-			for row in sensor.pixels:
-				pixels.append(row)
-			workQueue.put(pixels)
-			threadLock.release()
-		else :
-			threadLock.release()
+    print("start a thread for reading the pixels")
+    while True:
+        if not workQueue.full():
+            pixels = []
+            for row in sensor.pixels:
+                pixels += row
+            workQueue.put(pixels)
 
 def constrain(val, min_val, max_val):
     return min(max_val, max(min_val, val))
@@ -87,23 +85,18 @@ def map_value(x, in_min, in_max, out_min, out_max):
 #let the sensor initialize
 time.sleep(1.)
 #start a new thread to read pixels which will be stored in a queue
-_thread.start_new_thread(readPixels,(sensors,))
+_thread.start_new_thread(readPixels,(sensor,))
 while True:
 
     #read the pixels
     pixels = []
-    threadLock.acquire()
     if not workQueue.empty():
         pixels= workQueue.get()
-	threadLock.release()
     else:
-        threadLock.release()
         continue
-      pixels = [map_value(p, MINTEMP, MAXTEMP, 0, COLORDEPTH - 1) for p in pixels]
-
+    pixels = [map_value(p, MINTEMP, MAXTEMP, 0, COLORDEPTH - 1) for p in pixels]
     #perform interpolation
     bicubic = griddata(points, pixels, (grid_x, grid_y), method='cubic')
-
     #draw everything
     for ix, row in enumerate(bicubic):
         for jx, pixel in enumerate(row):
