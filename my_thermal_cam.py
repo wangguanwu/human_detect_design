@@ -85,6 +85,7 @@ def map_value(x, in_min, in_max, out_min, out_max):
 #let the sensor initialize
 time.sleep(1.)
 #start a new thread to read pixels which will be stored in a queue
+
 _thread.start_new_thread(readPixels,(sensor,))
 while True:
 
